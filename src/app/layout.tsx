@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Lora, Work_Sans } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { StickyBookingButton } from "@/components/layout/StickyBookingButton";
 import "@/styles/globals.css";
 
 const lora = Lora({
@@ -43,7 +46,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lora.variable} ${workSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+        <StickyBookingButton />
+      </body>
     </html>
   );
 }
