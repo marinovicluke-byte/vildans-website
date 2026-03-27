@@ -9,7 +9,7 @@ export function localBusinessSchema() {
     description: siteConfig.tagline,
     url: siteConfig.url,
     email: siteConfig.email,
-    ...(siteConfig.phone && { telephone: siteConfig.phone }),
+    ...(siteConfig.phone ? { telephone: siteConfig.phone } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
