@@ -25,28 +25,31 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <Section bg="secondary-light">
+    <Section bg="primary">
       <Container>
-        <Reveal className="text-center mb-12 md:mb-16">
-          <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
+        <Reveal className="text-center mb-16 md:mb-20">
+          <p className="label-caps mb-5">
             Client experiences
           </p>
           <h2 className="font-heading text-text-primary">
             What changes look like
           </h2>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-[1100px] mx-auto">
           {testimonials.map((testimonial, i) => (
-            <Reveal key={i} delay={i * 50} className="flex flex-col">
-              <blockquote className="bg-bg-primary rounded-lg p-8 border border-border-subtle flex flex-col flex-1">
-                <p className="text-text-primary text-sm leading-relaxed flex-1 mb-6">
-                  &ldquo;{testimonial.quote}&rdquo;
+            <Reveal key={i} delay={i * 80} className="flex flex-col">
+              <blockquote className="bg-bg-secondary-light rounded-lg p-8 md:p-10 flex flex-col flex-1 transition-all duration-base ease-smooth hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
+                <span className="font-heading text-[3.5rem] leading-none text-bg-secondary/50 select-none -mb-4" aria-hidden="true">
+                  &ldquo;
+                </span>
+                <p className="text-text-primary text-sm leading-relaxed flex-1 mb-8 font-light">
+                  {testimonial.quote}
                 </p>
                 <footer>
                   <p className="font-heading font-semibold text-text-primary text-sm">
                     {testimonial.name}
                   </p>
-                  <p className="text-text-secondary text-xs mt-1">{testimonial.condition}</p>
+                  <p className="text-text-secondary text-xs mt-1 font-light">{testimonial.condition}</p>
                 </footer>
               </blockquote>
             </Reveal>

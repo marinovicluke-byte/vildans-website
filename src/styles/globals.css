@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Colors */
+  /* Colors — 60/30/10 rule */
   --color-bg-primary: #FAFAF7;
   --color-bg-secondary: #9CAF88;
   --color-bg-secondary-light: #eef1ea;
@@ -11,30 +11,59 @@
   --color-text-primary: #2D2D2D;
   --color-text-secondary: #5A5A5A;
   --color-border: rgba(156, 175, 136, 0.2);
-  --color-border-subtle: rgba(156, 175, 136, 0.2);
+  --color-border-subtle: rgba(156, 175, 136, 0.15);
   --color-border-strong: rgba(156, 175, 136, 0.4);
 
-  /* Fonts - --font-* generates font-* utilities. Values set by Next.js font variables on <html>. */
+  /* Fonts */
   --font-heading: 'Lora', Georgia, serif;
   --font-body: 'Work Sans', system-ui, sans-serif;
 
-  /* Spacing - --spacing-* generates py-*, px-*, gap-*, etc. */
+  /* 8pt grid spacing tokens */
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-10: 80px;
+  --spacing-12: 96px;
+  --spacing-15: 120px;
+  --spacing-20: 160px;
   --spacing-section: clamp(60px, 10vw, 160px);
+  --spacing-section-mobile: clamp(48px, 8vw, 60px);
 
-  /* Max widths - --max-width-* generates max-w-* utilities */
+  /* Max widths */
   --max-width-content: 1200px;
   --max-width-body: 70ch;
 
-  /* Easing - --ease-* generates ease-* utilities */
+  /* Easing — custom cubic-bezier only */
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
 
-  /* Transition durations - --transition-duration-* generates duration-* utilities */
+  /* Transition durations */
   --transition-duration-micro: 150ms;
   --transition-duration-base: 300ms;
   --transition-duration-slow: 500ms;
+  --transition-duration-stagger: 50ms;
+
+  /* Letter spacing tokens */
+  --letter-spacing-display: -0.02em;
+  --letter-spacing-caps: 0.08em;
+  --letter-spacing-tight: -0.01em;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 12px 32px rgba(0,0,0,0.1);
+  --shadow-button-hover: 0 8px 24px rgba(183, 82, 54, 0.25);
+  --shadow-header: 0 1px 3px rgba(0,0,0,0.06);
 }
+
+/* ============================================
+   Base
+   ============================================ */
 
 html {
   scroll-behavior: smooth;
@@ -50,17 +79,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ============================================
+   Typography — weight variation 300-700
+   ============================================ */
+
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: var(--letter-spacing-display);
   font-weight: 500;
 }
 
-h1 { font-size: clamp(2rem, calc(1.273rem + 3.636vw), 3rem); }
-h2 { font-size: clamp(1.6rem, calc(1.1rem + 2.5vw), 2.4rem); }
-h3 { font-size: clamp(1.25rem, calc(1rem + 1.25vw), 1.8rem); }
-h4 { font-size: clamp(1.1rem, calc(0.95rem + 0.75vw), 1.4rem); }
+h1 {
+  font-size: clamp(2.25rem, calc(1.5rem + 3.75vw), 3.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.6rem, calc(1.1rem + 2.5vw), 2.4rem);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: clamp(1.25rem, calc(1rem + 1.25vw), 1.8rem);
+  font-weight: 500;
+}
+
+h4 {
+  font-size: clamp(1.1rem, calc(0.95rem + 0.75vw), 1.4rem);
+  font-weight: 600;
+}
+
+/* Uppercase labels */
+.label-caps {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-caps);
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   Comprehensive prefers-reduced-motion
+   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -69,4 +132,19 @@ h4 { font-size: clamp(1.1rem, calc(0.95rem + 0.75vw), 1.4rem); }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .reveal-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: rgba(156, 175, 136, 0.25);
+  color: var(--color-text-primary);
 }

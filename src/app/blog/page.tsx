@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { ArticleCard } from "@/components/blog/ArticleCard";
+import { BlogContent } from "@/components/blog/BlogContent";
 import { JsonLd, breadcrumbSchema } from "@/lib/schema";
 import { getAllArticles } from "@/lib/articles";
 
@@ -32,9 +32,7 @@ export default function BlogPage() {
           {articles.length === 0 ? (
             <p className="text-text-secondary">Articles coming soon.</p>
           ) : (
-            <div className="grid md:grid-cols-2 gap-6 max-w-[900px]">
-              {articles.map((article) => (<ArticleCard key={article.slug} article={article} />))}
-            </div>
+            <BlogContent articles={articles} />
           )}
         </Container>
       </Section>

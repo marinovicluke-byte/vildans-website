@@ -10,28 +10,28 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <Section bg="secondary-light">
+    <Section bg="primary">
       <Container narrow>
-        <Reveal className="text-center mb-12 md:mb-16">
-          <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
+        <Reveal className="text-center mb-16 md:mb-20">
+          <p className="label-caps mb-5">
             Common questions
           </p>
           <h2 className="font-heading text-text-primary">
             What you might be wondering
           </h2>
         </Reveal>
-        <div className="space-y-3">
+        <div className="space-y-2">
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="bg-bg-primary rounded-lg border border-border-subtle overflow-hidden"
+              className="border-b border-border-subtle"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full text-left p-6 flex items-center justify-between gap-4"
+                className="w-full text-left py-6 md:py-8 flex items-center justify-between gap-6 group"
                 aria-expanded={openIndex === i}
               >
-                <h3 className="font-heading text-text-primary text-base font-medium pr-4">
+                <h3 className="font-heading text-text-primary text-base md:text-lg font-medium pr-4 transition-colors duration-base ease-smooth group-hover:text-accent">
                   {faq.question}
                 </h3>
                 <span
@@ -49,7 +49,7 @@ export function FAQ() {
                   openIndex === i ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="px-6 pb-6 text-text-secondary text-sm leading-relaxed">
+                <p className="pb-8 text-text-secondary text-sm leading-relaxed font-light max-w-body">
                   {faq.answer}
                 </p>
               </div>

@@ -27,22 +27,22 @@ const conditions = [
 
 export function WhatIHelpWith() {
   return (
-    <Section bg="secondary-light">
+    <Section bg="primary">
       <Container>
-        <Reveal className="text-center mb-12 md:mb-16">
-          <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
+        <Reveal className="text-center mb-16 md:mb-20">
+          <p className="label-caps mb-5">
             What I help with
           </p>
-          <h2 className="font-heading text-text-primary max-w-[600px] mx-auto">
+          <h2 className="font-heading text-text-primary max-w-[560px] mx-auto">
             You don&rsquo;t have to keep guessing what you need
           </h2>
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-[900px] mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-[920px] mx-auto">
           {conditions.map((condition, i) => (
             <Reveal key={i} delay={i * 50}>
-              <div className="bg-bg-primary rounded-lg p-8 border border-border-subtle transition-all duration-base ease-smooth hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] h-full">
-                <h3 className="font-heading text-text-primary mb-3">{condition.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">
+              <div className="bg-bg-secondary-light rounded-lg p-8 md:p-10 transition-all duration-base ease-smooth hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] h-full">
+                <h3 className="font-heading text-text-primary mb-3 text-lg">{condition.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed font-light">
                   {condition.description}
                 </p>
               </div>

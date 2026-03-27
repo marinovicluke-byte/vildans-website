@@ -25,26 +25,28 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <Section bg="primary">
+    <Section bg="secondary-light">
       <Container>
-        <Reveal className="text-center mb-12 md:mb-16">
-          <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
+        <Reveal className="text-center mb-16 md:mb-20">
+          <p className="label-caps mb-5">
             Your first session
           </p>
           <h2 className="font-heading text-text-primary max-w-[500px] mx-auto">
             How it works
           </h2>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-[1000px] mx-auto">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-16 max-w-[1000px] mx-auto">
           {steps.map((step, i) => (
-            <Reveal key={step.number} delay={i * 50}>
-              <p className="font-heading text-4xl font-light text-bg-secondary/60 mb-4">
-                {step.number}
-              </p>
-              <h3 className="font-heading text-text-primary mb-3">{step.title}</h3>
-              <p className="text-text-secondary text-sm leading-relaxed">
-                {step.description}
-              </p>
+            <Reveal key={step.number} delay={i * 80}>
+              <div className="relative">
+                <p className="font-heading text-[4rem] md:text-[5rem] font-extralight leading-none text-bg-secondary/40 mb-6 tracking-tight">
+                  {step.number}
+                </p>
+                <h3 className="font-heading text-text-primary mb-4 text-lg font-medium">{step.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed font-light">
+                  {step.description}
+                </p>
+              </div>
             </Reveal>
           ))}
         </div>

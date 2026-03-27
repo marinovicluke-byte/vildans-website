@@ -9,15 +9,15 @@ const credentials = [
 
 export function CredibilityStrip() {
   return (
-    <section className="py-8 md:py-12 border-y border-border-subtle">
+    <section className="py-10 md:py-14 bg-bg-secondary-light">
       <Container>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-20">
           {credentials.map((cred, i) => (
             <Reveal key={i} delay={i * 50} className="text-center">
-              <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-1">
+              <p className="label-caps mb-1.5">
                 {cred.label}
               </p>
-              <p className="text-sm text-text-primary font-body">{cred.detail}</p>
+              <p className="text-sm text-text-primary font-body font-light">{cred.detail}</p>
             </Reveal>
           ))}
         </div>

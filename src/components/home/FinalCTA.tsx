@@ -6,13 +6,13 @@ import { siteConfig } from "@/lib/site-config";
 
 export function FinalCTA() {
   return (
-    <Section bg="primary">
+    <Section bg="secondary-light">
       <Container>
         <Reveal className="text-center max-w-[560px] mx-auto">
-          <h2 className="font-heading text-text-primary mb-6">
+          <h2 className="font-heading text-text-primary mb-8">
             Ready to find out what your body is holding?
           </h2>
-          <p className="text-text-secondary leading-relaxed mb-8">
+          <p className="text-text-secondary leading-relaxed mb-10 font-light">
             Book a free Clarity & Alignment Session. We&rsquo;ll talk about what&rsquo;s going
             on, I&rsquo;ll explain how kinesiology works for your specific situation, and
             we&rsquo;ll figure out whether it&rsquo;s the right fit.

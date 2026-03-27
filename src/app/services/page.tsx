@@ -21,13 +21,11 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const allServices = [...siteConfig.services.inPerson, ...siteConfig.services.online];
-
   return (
     <main>
       <JsonLd
         data={[
-          ...allServices.map((s) => serviceSchema(s)),
+          ...siteConfig.services.items.map((s) => serviceSchema(s)),
           breadcrumbSchema([
             { name: "Home", href: "/" },
             { name: "Services", href: "/services" },
@@ -44,7 +42,7 @@ export default function ServicesPage() {
             <p className="text-text-secondary leading-relaxed mb-8">
               Every session uses muscle monitoring to find exactly where your body is holding
               stress, tension, or emotional patterns, then works with targeted corrections to
-              release it. Initial sessions are 75 minutes. Follow-ups are 60 minutes.
+              release it. Available in person or via video call.
             </p>
             <Button href="#booking">Book a Session</Button>
           </div>
@@ -53,10 +51,8 @@ export default function ServicesPage() {
 
       <Section bg="secondary-light">
         <Container>
-          <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">In-person</p>
-          <h2 className="font-heading text-text-primary mb-8">Sessions at Moorabbin, Melbourne</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-[800px]">
-            {siteConfig.services.inPerson.map((service) => (
+          <div className="grid md:grid-cols-2 gap-8 max-w-[860px]">
+            {siteConfig.services.items.map((service) => (
               <ServiceCard key={service.name} {...service} />
             ))}
           </div>
@@ -64,18 +60,6 @@ export default function ServicesPage() {
       </Section>
 
       <Section>
-        <Container>
-          <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">Online</p>
-          <h2 className="font-heading text-text-primary mb-8">Sessions via video call</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-[800px]">
-            {siteConfig.services.online.map((service) => (
-              <ServiceCard key={service.name} {...service} />
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section bg="secondary-light">
         <Container>
           <div className="max-w-[600px] mx-auto text-center">
             <h2 className="font-heading text-text-primary mb-4">Packages &amp; roadmaps</h2>

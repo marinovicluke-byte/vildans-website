@@ -12,7 +12,14 @@ export function HeroReveal({ children, delay = 0, className = "" }: HeroRevealPr
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100 + delay);
+    /* Respect reduced motion */
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      setIsVisible(true);
+      return;
+    }
+
+    const timer = setTimeout(() => setIsVisible(true), 150 + delay);
     return () => clearTimeout(timer);
   }, [delay]);
 
@@ -21,8 +28,8 @@ export function HeroReveal({ children, delay = 0, className = "" }: HeroRevealPr
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: `opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1)`,
+        transform: isVisible ? "translateY(0)" : "translateY(16px)",
+        transition: `opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1)`,
       }}
     >
       {children}
