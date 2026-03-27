@@ -61,6 +61,7 @@ h1, h2, h3, h4 {
 h1 { font-size: clamp(2rem, calc(1.273rem + 3.636vw), 3rem); }
 h2 { font-size: clamp(1.6rem, calc(1.1rem + 2.5vw), 2.4rem); }
 h3 { font-size: clamp(1.25rem, calc(1rem + 1.25vw), 1.8rem); }
+h4 { font-size: clamp(1.1rem, calc(0.95rem + 0.75vw), 1.4rem); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
