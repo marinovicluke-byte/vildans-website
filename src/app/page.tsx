@@ -4,7 +4,8 @@ import { WhatIHelpWith } from "@/components/home/WhatIHelpWith";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Testimonials } from "@/components/home/Testimonials";
 import { AboutPreview } from "@/components/home/AboutPreview";
-import { FAQ, faqs } from "@/components/home/FAQ";
+import { FAQ } from "@/components/home/FAQ";
+import { faqs } from "@/components/home/faq-data";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import {
   JsonLd,
