@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 const testimonials = [
   {
@@ -26,30 +27,29 @@ export function Testimonials() {
   return (
     <Section bg="secondary-light">
       <Container>
-        <div className="text-center mb-12 md:mb-16">
+        <Reveal className="text-center mb-12 md:mb-16">
           <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
             Client experiences
           </p>
           <h2 className="font-heading text-text-primary">
             What changes look like
           </h2>
-        </div>
+        </Reveal>
         <div className="grid md:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
           {testimonials.map((testimonial, i) => (
-            <blockquote
-              key={i}
-              className="bg-bg-primary rounded-lg p-8 border border-border-subtle flex flex-col"
-            >
-              <p className="text-text-primary text-sm leading-relaxed flex-1 mb-6">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <footer>
-                <p className="font-heading font-semibold text-text-primary text-sm">
-                  {testimonial.name}
+            <Reveal key={i} delay={i * 50} className="flex flex-col">
+              <blockquote className="bg-bg-primary rounded-lg p-8 border border-border-subtle flex flex-col flex-1">
+                <p className="text-text-primary text-sm leading-relaxed flex-1 mb-6">
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                <p className="text-text-secondary text-xs mt-1">{testimonial.condition}</p>
-              </footer>
-            </blockquote>
+                <footer>
+                  <p className="font-heading font-semibold text-text-primary text-sm">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-text-secondary text-xs mt-1">{testimonial.condition}</p>
+                </footer>
+              </blockquote>
+            </Reveal>
           ))}
         </div>
       </Container>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { faqs } from "./faq-data";
 
 export function FAQ() {
@@ -11,14 +12,14 @@ export function FAQ() {
   return (
     <Section bg="secondary-light">
       <Container narrow>
-        <div className="text-center mb-12 md:mb-16">
+        <Reveal className="text-center mb-12 md:mb-16">
           <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
             Common questions
           </p>
           <h2 className="font-heading text-text-primary">
             What you might be wondering
           </h2>
-        </div>
+        </Reveal>
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <div

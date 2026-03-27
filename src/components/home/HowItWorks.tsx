@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
   {
@@ -26,17 +27,17 @@ export function HowItWorks() {
   return (
     <Section bg="primary">
       <Container>
-        <div className="text-center mb-12 md:mb-16">
+        <Reveal className="text-center mb-12 md:mb-16">
           <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
             Your first session
           </p>
           <h2 className="font-heading text-text-primary max-w-[500px] mx-auto">
             How it works
           </h2>
-        </div>
+        </Reveal>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-[1000px] mx-auto">
-          {steps.map((step) => (
-            <div key={step.number}>
+          {steps.map((step, i) => (
+            <Reveal key={step.number} delay={i * 50}>
               <p className="font-heading text-4xl font-light text-bg-secondary/60 mb-4">
                 {step.number}
               </p>
@@ -44,7 +45,7 @@ export function HowItWorks() {
               <p className="text-text-secondary text-sm leading-relaxed">
                 {step.description}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

@@ -1,13 +1,14 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/site-config";
 
 export function FinalCTA() {
   return (
     <Section bg="primary">
       <Container>
-        <div className="text-center max-w-[560px] mx-auto">
+        <Reveal className="text-center max-w-[560px] mx-auto">
           <h2 className="font-heading text-text-primary mb-6">
             Ready to find out what your body is holding?
           </h2>
@@ -17,7 +18,7 @@ export function FinalCTA() {
             we&rsquo;ll figure out whether it&rsquo;s the right fit.
           </p>
           <Button href={siteConfig.bookingUrl}>Book Your Free Session</Button>
-        </div>
+        </Reveal>
       </Container>
     </Section>
   );

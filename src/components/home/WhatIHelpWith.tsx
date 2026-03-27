@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 const conditions = [
   {
@@ -28,25 +29,24 @@ export function WhatIHelpWith() {
   return (
     <Section bg="secondary-light">
       <Container>
-        <div className="text-center mb-12 md:mb-16">
+        <Reveal className="text-center mb-12 md:mb-16">
           <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
             What I help with
           </p>
           <h2 className="font-heading text-text-primary max-w-[600px] mx-auto">
             You don&rsquo;t have to keep guessing what you need
           </h2>
-        </div>
+        </Reveal>
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-[900px] mx-auto">
           {conditions.map((condition, i) => (
-            <div
-              key={i}
-              className="bg-bg-primary rounded-lg p-8 border border-border-subtle transition-all duration-base ease-smooth hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
-            >
-              <h3 className="font-heading text-text-primary mb-3">{condition.title}</h3>
-              <p className="text-text-secondary text-sm leading-relaxed">
-                {condition.description}
-              </p>
-            </div>
+            <Reveal key={i} delay={i * 50}>
+              <div className="bg-bg-primary rounded-lg p-8 border border-border-subtle transition-all duration-base ease-smooth hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] h-full">
+                <h3 className="font-heading text-text-primary mb-3">{condition.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  {condition.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

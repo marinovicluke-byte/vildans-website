@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/site-config";
 
 export function AboutPreview() {
@@ -9,7 +10,7 @@ export function AboutPreview() {
     <Section bg="primary">
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          <div className="flex-shrink-0 w-full max-w-[360px]">
+          <Reveal className="flex-shrink-0 w-full max-w-[360px]">
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
               <Image
                 src="/images/vildan-about.jpg"
@@ -19,8 +20,8 @@ export function AboutPreview() {
                 sizes="(max-width: 768px) 100vw, 360px"
               />
             </div>
-          </div>
-          <div className="flex-1 max-w-[520px]">
+          </Reveal>
+          <Reveal delay={100} className="flex-1 max-w-[520px]">
             <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-4">
               About Vildan
             </p>
@@ -44,7 +45,7 @@ export function AboutPreview() {
                 Read More
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </Section>

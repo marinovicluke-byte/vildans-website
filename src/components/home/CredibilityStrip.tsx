@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 const credentials = [
   { label: "PKP Qualified", detail: "Professional Kinesiology Practice" },
@@ -12,12 +13,12 @@ export function CredibilityStrip() {
       <Container>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16">
           {credentials.map((cred, i) => (
-            <div key={i} className="text-center">
+            <Reveal key={i} delay={i * 50} className="text-center">
               <p className="text-xs uppercase tracking-[0.08em] font-medium text-text-secondary mb-1">
                 {cred.label}
               </p>
               <p className="text-sm text-text-primary font-body">{cred.detail}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>
