@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #FAFAF7;
+  --color-bg-secondary: #9CAF88;
+  --color-bg-secondary-light: #eef1ea;
+  --color-accent: #B75236;
+  --color-accent-hover: #a3482f;
+  --color-text-primary: #2D2D2D;
+  --color-text-secondary: #5A5A5A;
+  --color-border: rgba(156, 175, 136, 0.2);
+  --color-border-strong: rgba(156, 175, 136, 0.4);
+
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-120: 120px;
+
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --duration-micro: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --stagger-gap: 50ms;
+
+  --section-padding: clamp(60px, 10vw, 160px);
+  --content-max-width: 1200px;
+  --body-max-width: 70ch;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  font-size: clamp(1rem, calc(0.955rem + 0.227vw), 1.125rem);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+h1 { font-size: clamp(2rem, calc(1.273rem + 3.636vw), 3rem); }
+h2 { font-size: clamp(1.6rem, calc(1.1rem + 2.5vw), 2.4rem); }
+h3 { font-size: clamp(1.25rem, calc(1rem + 1.25vw), 1.8rem); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
