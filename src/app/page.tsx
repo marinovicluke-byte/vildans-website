@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { CredibilityStrip } from "@/components/home/CredibilityStrip";
 import { WhatIHelpWith } from "@/components/home/WhatIHelpWith";
@@ -14,6 +15,21 @@ import {
   websiteSchema,
   faqSchema,
 } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Intelligentle Healing | Kinesiology Bentleigh & Moorabbin Melbourne",
+  description:
+    "PKP Kinesiology for adults carrying stress, anxiety, and tension. Muscle monitoring finds where your body holds it. Moorabbin, Melbourne.",
+  openGraph: {
+    title: "Intelligentle Healing | Kinesiology Bentleigh & Moorabbin Melbourne",
+    description:
+      "PKP Kinesiology for adults carrying stress, anxiety, and tension. Muscle monitoring finds where your body holds it. Moorabbin, Melbourne.",
+    url: "https://www.intelligentlehealing.com",
+  },
+  alternates: {
+    canonical: "https://www.intelligentlehealing.com",
+  },
+};
 
 export default function Home() {
   return (
