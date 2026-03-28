@@ -7,9 +7,8 @@ export function HeroVideo() {
     <video
       autoPlay
       muted
-      loop
       playsInline
-      className="h-full w-full object-cover"
+      className="h-full w-full object-cover object-bottom"
     >
       <source src={`${basePath}/videos/hero.mp4`} type="video/mp4" />
     </video>
