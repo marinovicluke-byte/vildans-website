@@ -1,6 +1,8 @@
 import { getAllArticles } from "@/lib/articles";
 import { siteConfig } from "@/lib/site-config";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const articles = getAllArticles();
 
