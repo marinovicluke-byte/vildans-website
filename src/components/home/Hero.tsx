@@ -6,17 +6,19 @@ import { HeroVideo } from "@/components/home/HeroVideo";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#2a3a2a] overflow-hidden">
+    <section className="relative min-h-screen bg-[#1e2e1e] overflow-hidden">
       {/* Subtle dark vignette on the left/top corner */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.4)_0%,transparent_60%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.3)_0%,transparent_50%)] pointer-events-none" />
 
       {/* Video - right side, absolute positioned, pushed down and slightly smaller */}
       <div className="absolute top-[15%] bottom-0 right-0 w-full md:w-[50%] flex items-end justify-center">
         <div className="w-[90%] h-[90%]">
           <HeroVideo />
         </div>
-        {/* Soft fade from green background into video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2a3a2a] via-[#2a3a2a]/30 via-[15%] to-transparent" />
+        {/* Soft wide fade from background into video */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e2e1e] via-transparent via-[30%] to-transparent" />
+        {/* Top edge fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e2e1e] via-transparent via-[15%] to-transparent" />
       </div>
 
       {/* Content - left side */}
