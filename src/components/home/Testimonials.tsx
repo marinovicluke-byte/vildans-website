@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const testimonials = [
   {
     quote:
-      "I came in with constant jaw clenching and headaches that no one could explain. After three sessions, Vildan found it was connected to grief I'd been carrying for years. The tension hasn't come back.",
+      "After three sessions, Vildan found my headaches were connected to grief I'd been carrying for years. The tension hasn't come back.",
     name: "Sarah M.",
     role: "Jaw tension & chronic headaches",
     rating: "5.0",
@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     quote:
-      "I was sceptical about kinesiology but desperate. My anxiety had become physical, chest tightness, shallow breathing, constant nausea. Vildan's approach was grounded and specific. Two months in, my GP noticed the difference before I mentioned it.",
+      "My anxiety had become physical. Vildan's approach was grounded and specific. Two months in, my GP noticed the difference before I mentioned it.",
     name: "James K.",
     role: "Anxiety-driven physical symptoms",
     rating: "5.0",
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "I kept ending up in the same emotional patterns, especially around work stress. The muscle monitoring showed me exactly where I was holding it and why I kept reacting the same way. It was the first thing that actually made the pattern shift.",
+      "The muscle monitoring showed me exactly where I was holding stress and why I kept reacting the same way. It was the first thing that made it shift.",
     name: "Priya D.",
     role: "Recurring stress patterns",
     rating: "5.0",
