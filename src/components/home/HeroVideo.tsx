@@ -8,7 +8,7 @@ export function HeroVideo() {
       autoPlay
       muted
       playsInline
-      className="h-full w-full object-cover object-bottom"
+      className="h-full w-full object-cover object-[80%_65%]"
     >
       <source src={`${basePath}/videos/hero.mp4`} type="video/mp4" />
     </video>
