@@ -49,10 +49,10 @@ export function AboutPreview() {
 
             {/* Name */}
             <div className="mb-10 md:mb-14">
-              <h2 className="font-heading font-bold text-text-primary text-[clamp(2.8rem,calc(2rem+4vw),5rem)] leading-[0.95] tracking-[-0.02em]">
+              <h2 className="font-heading font-bold text-text-primary text-[clamp(3.5rem,calc(2.5rem+5vw),6.5rem)] leading-[0.95] tracking-[-0.02em]">
                 Vildan
               </h2>
-              <span className="font-heading italic font-normal text-[#9CAF88] text-[clamp(3.2rem,calc(2.4rem+5vw),6rem)] leading-[1] tracking-[-0.01em] block -mt-1">
+              <span className="font-heading italic font-normal text-[#9CAF88] text-[clamp(2.5rem,calc(1.8rem+3.5vw),4.5rem)] leading-[1.1] tracking-[-0.01em] block">
                 Alihodzic
               </span>
             </div>
