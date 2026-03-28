@@ -10,15 +10,17 @@ export function Hero() {
       {/* Subtle dark vignette on the left/top corner */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.3)_0%,transparent_50%)] pointer-events-none" />
 
-      {/* Video - right side, absolute positioned, pushed down and slightly smaller */}
-      <div className="absolute top-[15%] bottom-0 right-0 w-full md:w-[50%] flex items-end justify-center">
-        <div className="w-[90%] h-[90%]">
+      {/* Video - right side, full bleed */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
         </div>
-        {/* Soft wide fade from background into video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1e2e1e] via-transparent via-[30%] to-transparent" />
-        {/* Top edge fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e2e1e] via-transparent via-[15%] to-transparent" />
+        {/* Full left-to-right gradient: solid green on left fading to transparent on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e2e1e] from-[35%] via-[#1e2e1e]/70 via-[50%] to-transparent" />
+        {/* Subtle top fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e2e1e]/50 via-transparent via-[20%] to-transparent" />
+        {/* Subtle bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1e2e1e]/40 via-transparent via-[10%] to-transparent" />
       </div>
 
       {/* Content - left side */}
