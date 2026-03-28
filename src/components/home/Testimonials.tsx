@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const testimonials = [
   {
     quote:
-      "After three sessions, Vildan found my headaches were connected to grief I'd been carrying for years. The tension hasn't come back.",
+      "I came in with constant jaw clenching and headaches that no one could explain. After three sessions, Vildan found it was connected to grief I'd been carrying for years. The tension hasn't come back.",
     name: "Sarah M.",
     role: "Jaw tension & chronic headaches",
     rating: "5.0",
@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     quote:
-      "My anxiety had become physical. Vildan's approach was grounded and specific. Two months in, my GP noticed the difference before I mentioned it.",
+      "I was sceptical about kinesiology but desperate. My anxiety had become physical, chest tightness, shallow breathing, constant nausea. Vildan's approach was grounded and specific. Two months in, my GP noticed the difference before I mentioned it.",
     name: "James K.",
     role: "Anxiety-driven physical symptoms",
     rating: "5.0",
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "The muscle monitoring showed me exactly where I was holding stress and why I kept reacting the same way. It was the first thing that made it shift.",
+      "I kept ending up in the same emotional patterns, especially around work stress. The muscle monitoring showed me exactly where I was holding it and why I kept reacting the same way. It was the first thing that actually made the pattern shift.",
     name: "Priya D.",
     role: "Recurring stress patterns",
     rating: "5.0",
@@ -59,9 +59,9 @@ export function Testimonials() {
           {testimonials.map((testimonial, i) => (
             <Reveal key={i} delay={i * 80} className="flex flex-col">
               <div className="bg-white rounded-lg shadow-[0_2px_16px_rgba(0,0,0,0.06)] flex flex-col flex-1 overflow-hidden transition-all duration-base ease-smooth hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)]">
-                <div className="p-8 md:p-10 flex flex-col flex-1">
+                <div className="p-6 md:p-7 flex flex-col flex-1">
                   {/* Stars + Rating */}
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-3 mb-4">
                     <div className="flex gap-0.5">
                       <StarIcon />
                       <StarIcon />
@@ -75,7 +75,7 @@ export function Testimonials() {
                   </div>
 
                   {/* Quote */}
-                  <p className="text-text-primary text-sm leading-relaxed flex-1 mb-8 font-light italic">
+                  <p className="text-text-primary text-sm leading-relaxed flex-1 mb-5 font-light italic">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
 
