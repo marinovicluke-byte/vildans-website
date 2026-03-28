@@ -10,17 +10,18 @@ export function Hero() {
       {/* Subtle dark vignette on the left/top corner */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.3)_0%,transparent_50%)] pointer-events-none" />
 
-      {/* Video - right side, full bleed */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 w-full h-full">
-          <HeroVideo />
+      {/* Video - constrained, centre-right, pushed down */}
+      <div className="absolute inset-0 flex items-end justify-end pointer-events-none">
+        <div className="relative w-[35%] h-[50%] mr-[10%] mb-[-3%]">
+          <div className="absolute inset-0 rounded-sm overflow-hidden">
+            <HeroVideo />
+          </div>
+          {/* Feather edges into the background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1e2e1e] via-transparent via-[15%] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1e2e1e] via-transparent via-[15%] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e2e1e] via-transparent via-[10%] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-[#1e2e1e] via-transparent via-[8%] to-transparent" />
         </div>
-        {/* Full left-to-right gradient: solid green on left fading to transparent on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1e2e1e] from-[35%] via-[#1e2e1e]/70 via-[50%] to-transparent" />
-        {/* Subtle top fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e2e1e]/50 via-transparent via-[20%] to-transparent" />
-        {/* Subtle bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1e2e1e]/40 via-transparent via-[10%] to-transparent" />
       </div>
 
       {/* Content - left side */}
